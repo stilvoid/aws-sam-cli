@@ -17,7 +17,8 @@ grade: stable
 confinement: strict
 
 plugs:
-  personal-files:
+  config-aws:
+    interface: personal-files
     read:
       - $HOME/.aws
 
@@ -43,8 +44,6 @@ apps:
     command-chain:
       - bin/launcher.sh
     command: bin/sam
-    #plugs:
-    #  - home
     environment:
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
